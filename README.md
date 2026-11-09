@@ -4,7 +4,7 @@ Paper 26.2 plugin that allows endermen carrying a block to despawn under normal 
 
 ## Behavior
 
-Unprotected block-carrying endermen despawn immediately when farther than 128 blocks from all active non-spectator players (or if no such player exists), and may despawn after 600 far-distance ticks beyond 32 blocks (per-tick probability 1/800). Peaceful worlds remove eligible carriers. Named, vehicle/passenger, and remove-when-far-away-disabled entities are protected. Bukkit Entity.isPersistent() is a save-to-disk flag and is not used for despawn protection.
+Unprotected block-carrying endermen despawn immediately when farther than 128 blocks from all active non-spectator players (only when at least one eligible player exists; empty or spectator-only worlds do not trigger distance despawn), and may despawn after 600 far-distance ticks beyond 32 blocks (per-tick probability 1/800). Peaceful worlds remove eligible carriers. Named, vehicle/passenger, and remove-when-far-away-disabled entities are protected. Bukkit Entity.isPersistent() is a save-to-disk flag and is not used for despawn protection.
 
 This is an API-level approximation of vanilla despawn behavior: every 20 ticks it samples distances and aggregates the intervening probability. Timing within a scan interval can differ from vanilla. Only already-loaded entities are inspected.
 
