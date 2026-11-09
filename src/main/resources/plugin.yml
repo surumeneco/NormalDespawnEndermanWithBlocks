@@ -1,0 +1,6 @@
+name: NormalDespawnEndermanWithBlocks
+version: '${version}'
+main: dev.surumeneco.normaldespawn.NormalDespawnEndermanWithBlocksPlugin
+api-version: '26.2'
+description: Allows block-carrying endermen to despawn under ordinary hostile-mob rules.
+author: surumeneco
