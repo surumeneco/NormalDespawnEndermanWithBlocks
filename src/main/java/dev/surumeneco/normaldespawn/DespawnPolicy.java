@@ -57,7 +57,8 @@ public record DespawnPolicy(
         if (peaceful) {
             return new Result(Action.REMOVE, 0);
         }
-        if (Double.isNaN(nearestDistanceSquared)) {
+        // Without a nearby eligible player, vanilla distance despawning does not run.
+        if (!Double.isFinite(nearestDistanceSquared)) {
             return new Result(Action.KEEP, 0);
         }
 
