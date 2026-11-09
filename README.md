@@ -27,5 +27,7 @@ The plugin does not change the mob cap or prevent endermen from picking up block
 
 ## Design source
 
-Project design Draft: Google Drive forGPT/XPlayServer/OriginalPlugins/NormalDespawnEndermanWithBlocks/仕様.md.
-Java 25 build/test, CAT normative checks, and live-server acceptance are separate completion criteria.
+Project design source: [Google Drive specification](https://drive.google.com/file/d/1CISIkE1HL_k_zpsgDf3KEEJfM-soT7wl/view).
+The finite natural-despawn decision semantics are **Confirmed** under the user's explicit 2026-11-09 approval, recorded in [the decision provenance](docs/cat/decisions/2026-11-09-user-confirmed-authorization.md) and [confirmed CAT artifacts](docs/cat/confirmed/).
+
+CAT Process Closure and Model Conformance passed without draft overrides. **Implementation Conformance remains inconclusive** pending Java-specific obligations and formal execution evidence. Java 25 build/test and live-server acceptance are separate completion criteria; the branch is not a production release.
