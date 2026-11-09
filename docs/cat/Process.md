@@ -7,7 +7,7 @@ process: ndew.enderman.despawn
 source_refs:
   - https://drive.google.com/file/d/1CISIkE1HL_k_zpsgDf3KEEJfM-soT7wl/view
 decision_ref: ''
-refs:
+refs: 
   - ndew.enderman.despawn.pi.scan
 semantic_contract: markdown-v2
 language: ja
@@ -16,7 +16,7 @@ language: ja
 # Process: ndew.enderman.despawn
 
 ## 契約
-閉世界: 偽
+閉世界: 真
 
 ## 境界
 | PI |
@@ -26,24 +26,20 @@ language: ja
 ## 仕様状態
 | ID | Domain |
 | --- | --- |
-| 状態.遠距離経過 | 整数[0..] |
 
 ## 観測能力
 | ID | 情報源 | Domain |
 | --- | --- | --- |
-| 観測.近傍プレイヤー | サーバーワールド | 真偽 |
-| 観測.最短距離二乗 | サーバーワールド | 実数[0..] |
 
 ## 作用能力
 | ID | 対象 | Domain |
 | --- | --- | --- |
-| 作用.エンダーマン削除 | 現在処理対象 | 真偽 |
 
 ## 起点
 | ID | 由来 |
 | --- | --- |
 | スキャン | ndew.enderman.despawn.pi.scan/check |
 
-## 未確定点
+## 範囲
 
-- 連続確率と半端tick・ワールド境界を、CATの現行限定式と型付きDomainへどう写像するかは未確定。Draftとして保持し、擬似通過を行わない。
+自然デスポーンの有限分岐判断。距離の数値算出、tick累積、確率抽選は別途実装・Java単体テストで検証する。外部のワールド・Bukkit APIとデスポーン結果の結合は実機確認対象。
