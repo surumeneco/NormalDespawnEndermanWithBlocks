@@ -1,0 +1,2 @@
+# NormalDespawnEndermanWithBlocks
+Minecraft Paperサーバー向けプラグインであるNormalDespawnEndermanWithBlocks。エンダーマンがブロックを持っていても通常通りデスポーンさせます。
