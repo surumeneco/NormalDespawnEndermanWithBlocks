@@ -2,11 +2,11 @@
 cat_version: '0.3'
 kind: process
 id: ndew.enderman.despawn
-status: draft
+status: confirmed
 process: ndew.enderman.despawn
 source_refs:
   - https://drive.google.com/file/d/1CISIkE1HL_k_zpsgDf3KEEJfM-soT7wl/view
-decision_ref: ''
+decision_ref: https://github.com/surumeneco/NormalDespawnEndermanWithBlocks/blob/c66715e10e8ca32bc7a1b83e0e2c57bbbac1bd9d/docs/cat/decisions/2026-11-09-user-confirmed-authorization.md
 refs: 
   - ndew.enderman.despawn.pi.scan
 semantic_contract: markdown-v2
