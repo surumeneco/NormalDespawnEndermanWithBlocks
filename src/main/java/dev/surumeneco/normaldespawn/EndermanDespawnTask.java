@@ -77,7 +77,8 @@ final class EndermanDespawnTask implements Runnable {
     private static List<Location> activePlayerPositions(World world) {
         List<Location> positions = new ArrayList<>();
         for (Player player : world.getPlayers()) {
-            if (player.isValid() && !player.isDead() && player.getGameMode() != GameMode.SPECTATOR) {
+            if (DespawnPlayerEligibility.isEligible(player.isValid(), player.isDead(),
+                    player.getGameMode() == GameMode.SPECTATOR, player.getAffectsSpawning())) {
                 positions.add(player.getLocation());
             }
         }
