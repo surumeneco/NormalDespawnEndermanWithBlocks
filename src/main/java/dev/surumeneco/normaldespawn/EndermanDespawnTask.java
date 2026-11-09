@@ -68,8 +68,7 @@ final class EndermanDespawnTask implements Runnable {
     }
 
     private static boolean isProtected(Enderman enderman) {
-        return enderman.isPersistent()
-                || !enderman.getRemoveWhenFarAway()
+        return !enderman.getRemoveWhenFarAway()
                 || enderman.getCustomName() != null
                 || enderman.isInsideVehicle()
                 || !enderman.getPassengers().isEmpty();
