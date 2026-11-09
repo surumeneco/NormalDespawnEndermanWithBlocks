@@ -30,13 +30,25 @@ class DespawnPolicyTest {
     }
 
     @Test
-    void hardBoundaryIsStrictlyGreaterAndNoPlayerIsImmediateRemoval() {
+    void hardBoundaryIsStrictlyGreater() {
         assertEquals(DespawnPolicy.Action.REMOVE,
                 evaluate(true, false, false, 128.01, 0, 0.99).action());
         assertEquals(DespawnPolicy.Action.KEEP,
                 evaluate(true, false, false, 128, 0, 0.99).action());
+    }
+
+    @Test
+    void noEligiblePlayersDoesNotCauseDistanceDespawn() {
+        DespawnPolicy.Result result = POLICY.evaluate(
+                true, false, false, Double.POSITIVE_INFINITY, 650, 0);
+        assertEquals(DespawnPolicy.Action.KEEP, result.action());
+        assertEquals(0, result.farTicks());
+    }
+
+    @Test
+    void peacefulStillRemovesCarriersWhenNoEligiblePlayers() {
         assertEquals(DespawnPolicy.Action.REMOVE,
-                POLICY.evaluate(true, false, false, Double.POSITIVE_INFINITY, 0, 0.99).action());
+                POLICY.evaluate(true, false, true, Double.POSITIVE_INFINITY, 0, 0.999).action());
     }
 
     @Test
